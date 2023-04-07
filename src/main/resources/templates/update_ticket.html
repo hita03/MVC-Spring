@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>MyGate - MVC Pattern System</h1>
+        <hr>
+        <h2>Update Ticket</h2>
+
+        <form action="#" th:action="@{/saveTicket}" th:object="${ticket}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <!-- <input type="hidden" th:field="*{id}" /> -->
+
+            <input type="text" th:field="*{tid}" placeholder="Ticket ID" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{rid}" placeholder="Resident ID" class="form-control mb-4 col-4">
+
+            <input type="number" th:field="*{flat}" placeholder="Flat" class="form-control mb-4 col-4">
+
+			<input type="text" th:field="*{block}" placeholder="Block" class="form-control mb-4 col-4">
+			
+			<input type="number" th:field="*{is_resolved}" placeholder="Is_resolved" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{complaint}" placeholder="Complaint" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{response}" placeholder="Response" class="form-control mb-4 col-4">
+			
+			<input type="date" th:field="*{date_generated}" placeholder="Date Generated" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2"> Update Ticket</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Back to Tickets List</a>
+    </div>
+</body>
+
+</html>
